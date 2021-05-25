@@ -33,7 +33,36 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/about', 'Home::about');
+$routes->group('admin', function($routes){
+	
+	$routes->get('/', 'Administracion\DashboardController::index');
+	$routes->get('dashboard', 'Administracion\DashboardController::index');
+
+	$routes->group('companias', function($routes){
+		$routes->get('/', 'Administracion\CompaniaController::index');
+		$routes->post('/', 'Administracion\CompaniaController::index');
+		$routes->get('(:num)', 'Administracion\CompaniaController::registroPorId/$1');
+		$routes->get('tabla', 'Administracion\CompaniaController::tabla');
+		$routes->put('(:num)', 'Administracion\CompaniaController::actualizarRegistro/$1');
+		$routes->delete('(:num)', 'Administracion\CompaniaController::eliminarRegistro/$1');
+	});
+});
+
+$routes->group('compania', function($routes){
+
+	$routes->get('/', 'Compania\DashboardController::index');
+	$routes->get('dashboard', 'Compania\DashboardController::index');
+
+	$routes->group('personal', function($routes){
+		$routes->get('/', 'Compania\PersonalController::index');
+		$routes->post('/', 'Compania\PersonalController::index');
+		$routes->post('email-unique', 'Compania\PersonalController::correoUnico');
+		$routes->get('tabla', 'Compania\PersonalController::tabla');
+		$routes->get('(:num)', 'Compania\PersonalController::registroPorId/$1');
+		$routes->put('(:num)', 'Compania\PersonalController::actualizarRegistro/$1');
+		$routes->delete('(:num)', 'Compania\PersonalController::eliminarRegistro/$1');
+	});
+});
 
 /*
  * --------------------------------------------------------------------
