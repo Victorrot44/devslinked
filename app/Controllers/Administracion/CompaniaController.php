@@ -13,10 +13,12 @@ class CompaniaController extends BaseController{
 	public function index() {
     if ($this->request->getMethod() == 'post'):
       if (!$this->validate([
-        'compania' => 'required',
+        'compania'    => 'required',
+        'responsable' => 'required|max_length[150]|min_length[3]',
+        'puesto'      => 'required|max_length[150]|min_length[3]',
         'descripcion' => 'required|max_length[255]',
-        'correo' => 'required|valid_email|is_unique[compania.companiaCorreo]',
-        'password' => 'required|max_length[20]|min_length[8]'
+        'correo'      => 'required|valid_email|is_unique[compania.companiaCorreo]',
+        'password'    => 'required|max_length[20]|min_length[8]'
       ])):
         $res = [
           'error'         => true,
@@ -30,17 +32,19 @@ class CompaniaController extends BaseController{
 
       $datos = $this->request->getVar();
       $data = [
-        'companiaNombre'      => trim($datos['compania']),
-        'companiaDescripcion' => trim($datos['descripcion']),
-        'companiaLinkedIn'    => trim($datos['linkedin']),
-        'companiaCorreo'      => trim($datos['correo']),
-        'companiaPassword'    => trim($datos['password'])
+        'companiaNombre'            => trim($datos['compania']),
+        'companiaResponsable'       => trim($datos['responsable']),
+        'companiaResponsablePuesto' => trim($datos['puesto']),
+        'companiaDescripcion'       => trim($datos['descripcion']),
+        'companiaLinkedIn'          => trim($datos['linkedin']),
+        'companiaCorreo'            => trim($datos['correo']),
+        'companiaPassword'          => trim($datos['password'])
       ];
 
       $this->model->nuevo($data);
       return $this->response->setStatusCode(201);
     else :
-      $data['titulo'] = 'Compañias';
+      $data['titulo'] = lang('App.companies');
       return view('Administracion/companias', $data);
     endif;
 	}
@@ -51,17 +55,19 @@ class CompaniaController extends BaseController{
     
     foreach($data as $item):
       $accion = '<div class=\"btn-group\">';
-      $accion .= '<button type=\"button\" class=\"btn btn-info waves-effect\" title=\"Detalles\" onclick=\"detalles('. $item->companiaId .')\" data-toggle=\"modal\" data-target=\"#modalInfo\">';
+      $accion .= '<button type=\"button\" class=\"btn btn-info waves-effect\" title=\"'.ucfirst(lang('detail')).'\" onclick=\"detalles('. $item->companiaId .')\" data-toggle=\"modal\" data-target=\"#modalInfo\">';
       $accion .= '<i class=\"fa fa-info\"></i> </button>';
-      $accion .= '<button type=\"button\" class=\"btn btn-primary waves-effect\" title=\"Editar\" onclick=\"editar('. $item->companiaId .')\" data-toggle=\"modal\" data-target=\"#modalEdit\">';
+      $accion .= '<button type=\"button\" class=\"btn btn-primary waves-effect\" title=\"'.ucfirst(lang('update')).'\" onclick=\"editar('. $item->companiaId .')\" data-toggle=\"modal\" data-target=\"#modalEdit\">';
       $accion .= '<i class=\"fa fa-edit\"></i> </button>';
-      $accion .= '<button type=\"button\" class=\"btn btn-danger waves-effect\" title=\"Eliminar\" onclick=\"eliminar('. $item->companiaId .')\">';
+      $accion .= '<button type=\"button\" class=\"btn btn-danger waves-effect\" title=\"'.ucfirst(lang('delete')).'\" onclick=\"eliminar('. $item->companiaId .')\">';
       $accion .= '<i class=\"fas fa-trash-alt\"></i> </button> </div>';
       $tabla .= '{
-        "compania" : "'.$item->companiaNombre.'",
-        "linkedin" : "<a href=\"'.$item->companiaLinkedIn.'\">'.$item->companiaLinkedIn.'</a>",
-        "correo" : "'.$item->companiaCorreo.'",
-        "acciones" : "'.$accion.'"
+        "compania"    : "'.$item->companiaNombre.'",
+        "responsable" : "'.$item->companiaResponsable.'",
+        "puesto"      : "'.$item->companiaResponsablePuesto.'",
+        "linkedin"    : "<a href=\"'.$item->companiaLinkedIn.'\">'.$item->companiaLinkedIn.'</a>",
+        "correo"      : "'.$item->companiaCorreo.'",
+        "acciones"    : "'.$accion.'"
       },';
     endforeach;
 
@@ -84,9 +90,11 @@ class CompaniaController extends BaseController{
 
   public function actualizarRegistro(int $id) {
     if (!$this->validate([
-      'compania' => 'required',
+      'compania'    => 'required',
+      'responsable' => 'required|max_length[150]|min_length[3]',
+      'puesto'      => 'required|max_length[150]|min_length[3]',
       'descripcion' => 'required|max_length[255]',
-      'correo' => 'required|valid_email',
+      'correo'      => 'required|valid_email',
     ])):
       $res = [
         'error'         => true,
@@ -99,10 +107,12 @@ class CompaniaController extends BaseController{
     endif;
 
     $data = [
-      'companiaNombre'      => trim($this->request->getJsonVar('compania')),
-      'companiaDescripcion' => trim($this->request->getJsonVar('descripcion')),
-      'companiaLinkedIn'    => trim($this->request->getJsonVar('linkedin')),
-      'companiaCorreo'      => trim($this->request->getJsonVar('correo')),
+      'companiaNombre'            => trim($this->request->getJsonVar('compania')),
+      'companiaResponsable'       => trim($this->request->getJsonVar('responsable')),
+      'companiaResponsablePuesto' => trim($this->request->getJsonVar('puesto')),
+      'companiaDescripcion'       => trim($this->request->getJsonVar('descripcion')),
+      'companiaLinkedIn'          => trim($this->request->getJsonVar('linkedin')),
+      'companiaCorreo'            => trim($this->request->getJsonVar('correo')),
     ];
 
     if(trim($this->request->getJsonVar('password')) != "") :
@@ -121,7 +131,7 @@ class CompaniaController extends BaseController{
       'response'      => $respuesta
     ];
 
-    return $this->response->setStatusCode(201)->setJSON($res); 
+    return $this->response->setStatusCode(201)->setJSON($data); 
   }
 
   public function eliminarRegistro(int $id) {

@@ -5,21 +5,21 @@
 							<a href="<?= base_url('admin') ?>"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
 						</li>
 						<li class="has-submenu">
-							<a href="#"> <i class="fa fa-swatchbook"></i> Catálogos <div class="arrow-down"></div>
+							<a href="#"> <i class="fa fa-swatchbook"></i> <?= lang('App.catalogs') ?> <div class="arrow-down"></div>
 							</a>
 							<ul class="submenu">
-								<li> <a href="<?= base_url('admin/lenguajes-de-programacion') ?>"> Lenguajes de Programación	</a> </li>
-								<li> <a href="<?= base_url('admin/frameworks') ?>"> Frameworks </a> </li>
-								<li> <a href="<?= base_url('admin/base-de-datos') ?>"> Base de Datos </a> </li>
-								<li> <a href="<?= base_url('admin/sistemas-operativos') ?>"> Sistemas Operativos </a> </li>
-								<li> <a href="<?= base_url('admin/softwares') ?>"> Softwares </a> </li>
-								<li> <a href="<?= base_url('admin/metodologias') ?>"> Metodologias </a> </li>
-								<li> <a href="<?= base_url('admin/herramientas-de-la-nube') ?>"> Herramientas en la Nube </a> </li>
-								<li> <a href="<?= base_url('admin/idiomas') ?>"> Idiomas </a> </li>
+								<li> <a href="<?= base_url('admin/programming-languages') ?>"> <?= lang('App.programming_languages') ?>	</a> </li>
+								<li> <a href="<?= base_url('admin/frameworks') ?>"> <?= lang('App.frameworks') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/databases') ?>"> <?= lang('App.databases') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/operating-systems') ?>"> <?= lang('App.operating_systems') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/softwares') ?>"> <?= lang('App.softwares')?> </a> </li>
+								<li> <a href="<?= base_url('admin/methodologies') ?>"> <?= lang('App.methodologies') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/cloud-tools') ?>"> <?= lang('App.cloud').' '.lang('tools') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/lenguages') ?>"> <?= lang('App.languages') ?> </a> </li>
 							</ul>
 						</li>
 						<li class="has-submenu">
-							<a href="<?= base_url('admin/companias') ?>"> <i class="fa fa-building"></i> Compañias </a>
+							<a href="<?= base_url('admin/company') ?>"> <i class="fa fa-building"></i> <?= lang('App.companies') ?> </a>
 						</li>
 
 					<!--

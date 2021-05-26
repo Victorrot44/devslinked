@@ -26,7 +26,7 @@
               <div class="page-title-box">
                 <div class="page-title-right">
                   <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"> <a href="<?= base_url('admin/dashboard') ?>"> Dashboard </a> </li>
+                    <li class="breadcrumb-item"> <a href="<?= base_url('admin/dashboard') ?>"> <?= lang('App.dashboard') ?> </a> </li>
                     <li class="breadcrumb-item active"> <?= $titulo?> </li>
                   </ol>
                 </div>
@@ -38,10 +38,10 @@
                 <table id="datatable" class="table table-bordered table-bordered dt-responsive nowrap text-center">
                   <thead>
                     <tr class="text-center">
-                      <th>Personal</th>
+                      <th> <?= lang('App.personal') ?> </th>
                       <th>Tipo de Personal</th>
-                      <th>Correo Electrónico</th>
-                      <th>Acciones</th>
+                      <th> <?= lang('App.email') ?> </th>
+                      <th> <?= lang('App.actions') ?> </th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-12 col-md-5">
               <div class="card-box">
-                <h4 class="text-center mb-3">Formulario de Registros</h4>
+                <h4 class="text-center mb-3"><?= lang('App.add') ?> <?= lang('App.record') ?></h4>
                 <form id="form-1" class="form-horizontal" role="form" autocomplete="off">
                   <div class="form-group row">
                     <label for="nombre" class="col-sm-3 col-form-label"> Nombre(s): </label>
@@ -81,21 +81,21 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="correo" class="col-sm-3 col-form-label"> Correo electrónico: </label>
+                    <label for="correo" class="col-sm-3 col-form-label"> <?= lang('App.email') ?>: </label>
                     <div class="col-sm-9">
-                      <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico">
+                      <input type="email" id="correo" name="correo" class="form-control" placeholder="<?= lang('App.email') ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label"> Contraseña: </label>
+                    <label for="password" class="col-sm-3 col-form-label"> <?= lang('App.password') ?>: </label>
                     <div class="col-sm-9">
-                      <input type="text" id="password" name="password"class="form-control" placeholder="Constraseña">
+                      <input type="text" id="password" name="password"class="form-control" placeholder="<?= lang('App.password') ?>">
                     </div>
                   </div>
                   <div class="form-group mb-0 justify-content-end row">
                     <div class="col-sm-9">
                       <button type="submit" class="btn btn-info waves-effect waves-light">
-                        <i class="fa fa-save"></i> Guardar
+                        <i class="fa fa-save"></i> <?= lang('App.save') ?>
                       </button>
                     </div>
                   </div>
@@ -110,7 +110,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalCenterLabel"> <i class="fa fa-edit"></i> Actualizar Registro</h5>
+              <h5 class="modal-title" id="modalCenterLabel"> <i class="fa fa-edit"></i> <?= lang('App.update') ?> <?= lang('App.record') ?></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -146,21 +146,21 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="correo" class="col-sm-3 col-form-label"> Correo electrónico: </label>
+                  <label for="correo" class="col-sm-3 col-form-label"> <?= lang('App.email') ?>: </label>
                   <div class="col-sm-9">
-                    <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico">
+                    <input type="email" id="correo" name="correo" class="form-control" placeholder="<?= lang('App.email') ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="password" class="col-sm-3 col-form-label"> Contraseña: </label>
+                  <label for="password" class="col-sm-3 col-form-label"> <?= lang('App.password') ?>: </label>
                   <div class="col-sm-9">
-                    <input type="text" id="password" name="password"class="form-control" placeholder="Constraseña">
+                    <input type="text" id="password" name="password"class="form-control" placeholder="<?= lang('App.password') ?>">
                   </div>
                 </div>
                 <div class="form-group mb-0 justify-content-end row">
                   <div class="col-sm-9">
                     <button type="submit" class="btn btn-info waves-effect waves-light">
-                      <i class="fa fa-save"></i> Guardar
+                      <i class="fa fa-save"></i> <?= lang('App.save') ?>
                     </button>
                   </div>
                 </div>
@@ -205,7 +205,7 @@
             required: true,
             email: true,
             remote: {
-              url : "<?= base_url('compania/personal/email-unique') ?>",
+              url : "<?= base_url('company/personal/email-unique') ?>",
               type : "post",
               dataType : 'json',
               data : {
@@ -253,7 +253,7 @@
         table =  $('#datatable').DataTable({
           "language": { "url": "<?= base_url('public/libs/datatables/es_es.json') ?>" },
           "ajax" : {
-            "url" : "<?= base_url('compania/personal/tabla') ?>",
+            "url" : "<?= base_url('company/personal/table') ?>",
             "type" : "GET"
           },
           "columns" : [
@@ -269,7 +269,7 @@
     $('#form-1').submit(function(e){
       e.preventDefault();
       $.ajax({
-        url : '<?= base_url('compania/personal') ?>',
+        url : '<?= base_url('company/personal') ?>',
         type : 'POST',
         headers: {'X-Requested-With': 'XMLHttpRequest'},
         data: $("#form-1").serialize(),
@@ -303,7 +303,7 @@
       let id = $('#id').val();
       e.preventDefault();
       $.ajax({
-        url : '<?= base_url('compania/personal') ?>/'+id,
+        url : '<?= base_url('company/personal') ?>/'+id,
         method : "PUT",
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         contentType: 'application/json',
@@ -354,7 +354,7 @@
     });
 
     function editar(id) {
-      $.ajax('<?= base_url('compania/personal') ?>/'+ id, {
+      $.ajax('<?= base_url('company/personal') ?>/'+ id, {
         method : "GET",
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         success : function(res) {
@@ -373,12 +373,12 @@
 
     function eliminar(id) {
       Swal.fire({
-        title: 'Eliminar Registro',
+        title: '<?= lang('App.delete') ?> <?= lang('App.record') ?>',
         text: '¿Estas seguro de eliminar el registro?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Si, ¡Eliminalo!',
-        cancelButtonText: 'No, ¡Cancelar!',
+        confirmButtonText: '<?= lang('App.confirm') ?>!',
+        cancelButtonText: '<?= lang('App.cancel') ?>!',
         confirmButtonClass: "btn btn-success mt-2",
         cancelButtonClass: "btn btn-danger ml-2 mt-2",
         buttonsStyling: false,
@@ -386,7 +386,7 @@
         if (res .dismiss) {
           Swal.fire( '¡Acción Cancelada!', '', 'error');
         } else {
-          $.ajax('<?= base_url('compania/personal') ?>/'+ id, {
+          $.ajax('<?= base_url('company/personal') ?>/'+ id, {
             method: "DELETE",
             headers: { 'X-Requested-With': 'XMLHttpRequest' },
             success : function(res) {

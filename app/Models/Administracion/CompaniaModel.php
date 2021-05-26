@@ -13,7 +13,7 @@ class CompaniaModel extends Model{
   protected $returnType     = 'object'; // array | object | Endity
   protected $useSoftDeletes = true;
 
-  protected $allowedFields = ['companiaNombre', 'companiaDescripcion', 'companiaLinkedIn', 'companiaCorreo', 'companiaPassword'];
+  protected $allowedFields = ['companiaNombre', 'companiaResponsable', 'companiaResponsablePuesto', 'companiaDescripcion', 'companiaLinkedIn', 'companiaCorreo', 'companiaPassword'];
 
   protected $useTimestamps = true;
   protected $createdField  = 'created_at';
@@ -45,7 +45,7 @@ class CompaniaModel extends Model{
   }
 
   public function obtenerPorId(int $id) {
-    return $this->select('companiaId, companiaNombre, companiaDescripcion, companiaLinkedIn, companiaCorreo')->find($id);
+    return $this->select('companiaId, companiaNombre, companiaResponsable, companiaResponsablePuesto, companiaDescripcion, companiaLinkedIn, companiaCorreo')->find($id);
   }
 
   public function actualizar(int $id, Array $data) {

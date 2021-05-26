@@ -38,17 +38,30 @@ $routes->group('admin', function($routes){
 	$routes->get('/', 'Administracion\DashboardController::index');
 	$routes->get('dashboard', 'Administracion\DashboardController::index');
 
-	$routes->group('companias', function($routes){
+	$routes->group('company', function($routes){
 		$routes->get('/', 'Administracion\CompaniaController::index');
 		$routes->post('/', 'Administracion\CompaniaController::index');
 		$routes->get('(:num)', 'Administracion\CompaniaController::registroPorId/$1');
-		$routes->get('tabla', 'Administracion\CompaniaController::tabla');
+		$routes->get('table', 'Administracion\CompaniaController::tabla');
 		$routes->put('(:num)', 'Administracion\CompaniaController::actualizarRegistro/$1');
 		$routes->delete('(:num)', 'Administracion\CompaniaController::eliminarRegistro/$1');
 	});
+
+	$routes->group('catalogos', function($routes){
+		
+		$routes->group('lenguajes-de-programacion', function($routes){});
+		$routes->group('frameworks', function($routes){});
+		$routes->group('bases-de-datos', function($routes){});
+		$routes->group('sistemas-operativos', function($routes){});
+		$routes->group('softwares', function($routes){});
+		$routes->group('tipos-de-softwares', function($routes){});
+		$routes->group('meto', function($routes){});
+		$routes->group('bases-de-datos', function($routes){});
+
+	});
 });
 
-$routes->group('compania', function($routes){
+$routes->group('company', function($routes){
 
 	$routes->get('/', 'Compania\DashboardController::index');
 	$routes->get('dashboard', 'Compania\DashboardController::index');
@@ -57,7 +70,7 @@ $routes->group('compania', function($routes){
 		$routes->get('/', 'Compania\PersonalController::index');
 		$routes->post('/', 'Compania\PersonalController::index');
 		$routes->post('email-unique', 'Compania\PersonalController::correoUnico');
-		$routes->get('tabla', 'Compania\PersonalController::tabla');
+		$routes->get('table', 'Compania\PersonalController::tabla');
 		$routes->get('(:num)', 'Compania\PersonalController::registroPorId/$1');
 		$routes->put('(:num)', 'Compania\PersonalController::actualizarRegistro/$1');
 		$routes->delete('(:num)', 'Compania\PersonalController::eliminarRegistro/$1');

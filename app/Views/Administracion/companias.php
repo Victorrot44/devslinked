@@ -26,7 +26,7 @@
               <div class="page-title-box">
                 <div class="page-title-right">
                   <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"> <a href="<?= base_url('admin/dashboard') ?>"> Dashboard </a> </li>
+                    <li class="breadcrumb-item"> <a href="<?= base_url('admin/dashboard') ?>"> <?= ucfirst(lang('App.dashboard')) ?> </a> </li>
                     <li class="breadcrumb-item active"> <?= $titulo?> </li>
                   </ol>
                 </div>
@@ -38,10 +38,12 @@
                 <table id="datatable" class="table table-bordered table-bordered dt-responsive nowrap text-center">
                   <thead>
                     <tr class="text-center">
-                      <th>Compañia</th>
+                      <th> <?= ucfirst(lang('App.company')) ?> </th>
+                      <th> <?= lang('App.responsable') ?> </th>
+                      <th> <?= lang('App.job_title') ?> </th>
                       <th>LinkedIn</th>
-                      <th>Correo Electrónico</th>
-                      <th>Acciones</th>
+                      <th> <?= ucfirst(lang('App.email')) ?> </th>
+                      <th> <?= ucfirst(lang('App.actions')) ?> </th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -52,39 +54,51 @@
               <div class="card-box">
                 <form id="form-1" class="form-horizontal" role="form" autocomplete="off">
                   <div class="form-group row">
-                    <label for="compania" class="col-sm-3 col-form-label"> Nombre: </label>
+                    <label for="compania" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.App.company')) ?>: </label>
                     <div class="col-sm-9">
-                      <input type="text" id="compania" name="compania" class="form-control text-uppercase" placeholder="Nombre de la Compañia">
+                      <input type="text" id="compania" name="compania" class="form-control" placeholder="<?= ucfirst(lang('App.App.company')) ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="descripcion" class="col-sm-3 col-form-label"> Descripción: </label>
+                    <label for="responsable" class="col-sm-3 col-form-label"> <?= lang('App.responsable') ?>: </label>
                     <div class="col-sm-9">
-                      <textarea name="descripcion" id="descripcion" class="form-control text-uppercase mb-2" maxlength="225" rows="6" placeholder="Descripción de la compañia"></textarea>
+                      <input type="text" id="responsable" name="responsable" class="form-control" placeholder="<?= lang('App.responsable') ?>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="puesto" class="col-sm-3 col-form-label"> <?= lang('App.job_title') ?>: </label>
+                    <div class="col-sm-9">
+                      <input type="text" id="puesto" name="puesto" class="form-control" placeholder="<?= lang('App.job_title') ?>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="descripcion" class="col-sm-3 col-form-label"> <?= lang('App.description') ?>: </label>
+                    <div class="col-sm-9">
+                      <textarea name="descripcion" id="descripcion" class="form-control mb-2" maxlength="225" rows="6" placeholder="<?= lang('App.description') ?>"></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="linkedin" class="col-sm-3 col-form-label"> LinkedIn: </label>
                     <div class="col-sm-9">
-                      <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="Enlace a la página de LinkedIn">
+                      <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="LinkedIn">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="correo" class="col-sm-3 col-form-label"> Correo electrónico: </label>
+                    <label for="correo" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.email')) ?>: </label>
                     <div class="col-sm-9">
-                      <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico">
+                      <input type="email" id="correo" name="correo" class="form-control" placeholder="<?= ucfirst(lang('App.email')) ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label"> Contraseña: </label>
+                    <label for="password" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.password')) ?>: </label>
                     <div class="col-sm-9">
-                      <input type="text" id="password" name="password"class="form-control" placeholder="Constraseña">
+                      <input type="text" id="password" name="password"class="form-control" placeholder="<?= ucfirst(lang('App.password')) ?>">
                     </div>
                   </div>
                   <div class="form-group mb-0 justify-content-end row">
                     <div class="col-sm-9">
                       <button type="submit" class="btn btn-info waves-effect waves-light">
-                        <i class="fa fa-save"></i> Guardar
+                        <i class="fa fa-save"></i> <?= ucfirst(lang('save')) ?>
                       </button>
                     </div>
                   </div>
@@ -100,20 +114,32 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalCenterLabel"> <i class="fa fa-info-circle"></i> Detalles del Registro </h5>
+              <h5 class="modal-title" id="modalCenterLabel"> <i class="fa fa-info-circle"></i>  <?= ucfirst(lang('App.detail')) ?>  <?= ucfirst(lang('App.record')) ?> </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="form-group row">
-                <label for="compania" class="col-sm-3 col-form-label"> Nombre: </label>
+                <label for="compania" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.company')) ?>: </label>
                 <div class="col-sm-9">
                   <p id="compania"></p>
                 </div>
               </div>
               <div class="form-group row">
-                <label for="descripcion" class="col-sm-3 col-form-label"> Descripción: </label>
+                <label for="responsable" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.responsable')) ?>: </label>
+                <div class="col-sm-9">
+                  <p id="responsable"></p>
+                </div>
+              </div>
+                  <div class="form-group row">
+                    <label for="puesto" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.job_title')) ?>: </label>
+                    <div class="col-sm-9">
+                      <p id="puesto"></p>
+                    </div>
+                  </div>
+              <div class="form-group row">
+                <label for="descripcion" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.description')) ?>: </label>
                 <div class="col-sm-9">
                   <p id="descripcion"></p>
                 </div>
@@ -125,7 +151,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="correo" class="col-sm-3 col-form-label"> Correo electrónico: </label>
+                <label for="correo" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.email')) ?>: </label>
                 <div class="col-sm-9">
                   <p id="correo"></p>
                 </div>
@@ -139,7 +165,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalCenterLabel"> <i class="fa fa-edit"></i> Actualizar Registro</h5>
+              <h5 class="modal-title" id="modalCenterLabel"> <i class="fa fa-edit"></i> <?= ucfirst(lang('App.update')) ?> <?= ucfirst(lang('App.record')) ?> </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -148,39 +174,51 @@
               <form id="form-2" class="form-horizontal" role="form" autocomplete="off">
                 <input type="hidden" name="id" id="id">
                 <div class="form-group row">
-                  <label for="compania" class="col-sm-3 col-form-label"> Nombre: </label>
+                  <label for="compania" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.company')) ?>: </label>
                   <div class="col-sm-9">
-                    <input type="text" id="compania" name="compania" class="form-control text-uppercase" placeholder="Nombre de la Compañia">
+                    <input type="text" id="compania" name="compania" class="form-control" placeholder="<?= ucfirst(lang('App.company')) ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="descripcion" class="col-sm-3 col-form-label"> Descripción: </label>
+                  <label for="responsable" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.responsable')) ?>: </label>
                   <div class="col-sm-9">
-                    <textarea name="descripcion" id="descripcion" class="form-control text-uppercase mb-2" maxlength="225" rows="6" placeholder="Descripción de la compañia"></textarea>
+                    <input type="text" id="responsable" name="responsable" class="form-control" placeholder="<?= ucfirst(lang('App.responsable')) ?>">
+                  </div>
+                </div>
+                  <div class="form-group row">
+                    <label for="puesto" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.job_title')) ?>: </label>
+                    <div class="col-sm-9">
+                      <input type="text" id="puesto" name="puesto" class="form-control" placeholder="<?= ucfirst(lang('App.job_title')) ?>">
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <label for="descripcion" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.description')) ?>: </label>
+                  <div class="col-sm-9">
+                    <textarea name="descripcion" id="descripcion" class="form-control mb-2" maxlength="225" rows="6" placeholder="<?= ucfirst(lang('App.description')) ?>"></textarea>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="linkedin" class="col-sm-3 col-form-label"> LinkedIn: </label>
                   <div class="col-sm-9">
-                    <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="Enlace a la página de LinkedIn">
+                    <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="LinkedIn">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="correo" class="col-sm-3 col-form-label"> Correo electrónico: </label>
+                  <label for="correo" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.email')) ?>: </label>
                   <div class="col-sm-9">
-                    <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico">
+                    <input type="email" id="correo" name="correo" class="form-control" placeholder="<?= ucfirst(lang('App.email')) ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="password" class="col-sm-3 col-form-label"> Contraseña: </label>
+                  <label for="password" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.password')) ?>: </label>
                   <div class="col-sm-9">
-                    <input type="text" id="password" name="password"class="form-control" placeholder="Constraseña">
+                    <input type="text" id="password" name="password"class="form-control" placeholder="<?= ucfirst(lang('App.password')) ?>">
                   </div>
                 </div>
                 <div class="form-group mb-0 justify-content-end row">
                   <div class="col-sm-9">
                     <button type="submit" class="btn btn-info waves-effect waves-light">
-                      <i class="fa fa-save"></i> Guardar
+                      <i class="fa fa-save"></i> <?= ucfirst(lang('App.App.save')) ?>
                     </button>
                   </div>
                 </div>
@@ -218,6 +256,8 @@
         lang : 'es',
         rules : {
           compania : { required: true, minlength: 3, maxlength: 60 },
+          responsable : { required: true, minlength:3, maxlength: 150 },
+          puesto : { required: true, minlength:3, maxlength: 150 },
           descripcion : { required: true, minlength: 25, maxlength: 255 },
           correo : {
             required: true,
@@ -237,6 +277,8 @@
         lang : 'es',
         rules : {
           compania : { required: true, minlength: 3, maxlength: 60 },
+          responsable : { required: true, minlength:3, maxlength: 150 },
+          puesto : { required: true, minlength:3, maxlength: 150 },
           descripcion : { required: true, minlength: 25, maxlength: 255 },
           correo : { email: true },
           password : { minlength: 8, maxlength: 25}
@@ -261,11 +303,13 @@
         table =  $('#datatable').DataTable({
           "language": { "url": "<?= base_url('public/libs/datatables/es_es.json') ?>" },
           "ajax" : {
-            "url" : "<?= base_url('admin/companias/tabla') ?>",
+            "url" : "<?= base_url('admin/company/table') ?>",
             "type" : "GET"
           },
           "columns" : [
             {'data' : 'compania'},
+            {'data' : 'responsable'},
+            {'data' : 'puesto'},
             {'data' : 'linkedin'},
             {'data' : 'correo'},
             {'data' : 'acciones'}
@@ -277,13 +321,11 @@
     $('#form-1').submit(function(e){
       e.preventDefault();
       $.ajax({
-        url : '<?= base_url('admin/companias') ?>',
+        url : '<?= base_url('admin/company') ?>',
         type : 'POST',
         headers: {'X-Requested-With': 'XMLHttpRequest'},
         data: $("#form-1").serialize(),
         success : function(res) {
-          let data = res;
-          console.log(data);
           resetCss();
           $("#form-1")[0].reset();
           table.ajax.reload();
@@ -296,7 +338,6 @@
           },
           500 : function (err){
             let data = err;
-            console.log(data);
             Swal.fire(
               data.statusText,
               data.responseJSON.message,
@@ -311,17 +352,19 @@
       let id = $('#id').val();
       e.preventDefault();
       $.ajax({
-        url : '<?= base_url('admin/companias') ?>/'+id,
+        url : '<?= base_url('admin/company') ?>/'+id,
         method : "PUT",
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify({
-          "compania" : ""+$('#form-2  #compania').val()+"",
+          "compania"    : ""+$('#form-2  #compania').val()+"",
+          "responsable" : ""+$('#form-2  #responsable').val()+"",
+          "puesto" : ""+$('#form-2  #puesto').val()+"",
           "descripcion" : ""+$('#form-2  #descripcion').val()+"",
-          "linkedin" : ""+$('#form-2  #linkedin').val()+"",
-          "correo" : ""+$('#form-2  #correo').val()+"",
-          "password" : ""+$('#form-2  #password').val()+"",
+          "linkedin"    : ""+$('#form-2  #linkedin').val()+"",
+          "correo"      : ""+$('#form-2  #correo').val()+"",
+          "password"    : ""+$('#form-2  #password').val()+"",
         }),
         success : function(res) {
           table.ajax.reload();
@@ -339,7 +382,6 @@
           },
           500 : function (err){
             let data = err;
-            console.log(data);
             Swal.fire(
               data.statusText,
               data.responseJSON.message,
@@ -361,13 +403,14 @@
     });
 
     function detalles(id) {
-      $.ajax('<?= base_url('admin/companias') ?>/'+ id, {
+      $.ajax('<?= base_url('admin/company') ?>/'+ id, {
         method : "GET",
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         success : function(res) {
           let data = res;
-          console.log(data);
           $('p#compania').html(data.response.companiaNombre);
+          $('p#responsable').html(data.response.companiaResponsable);
+          $('p#puesto').html(data.response.companiaResponsablePuesto);
           $('p#descripcion').html(data.response.companiaDescripcion);
           $('p#linkedin').html('<a href="'+data.response.companiaLinkedIn+'">'+data.response.companiaLinkedIn+'</a>');
           $('p#correo').html(data.response.companiaCorreo);
@@ -377,14 +420,15 @@
     }
 
     function editar(id) {
-      $.ajax('<?= base_url('admin/companias') ?>/'+ id, {
+      $.ajax('<?= base_url('admin/company') ?>/'+ id, {
         method : "GET",
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
         success : function(res) {
           let data = res;
-          console.log(data);
           $('#id').val(data.response.companiaId);
           $('#form-2  #compania').val(data.response.companiaNombre);
+          $('#form-2  #responsable').val(data.response.companiaResponsable);
+          $('#form-2  #puesto').val(data.response.companiaResponsablePuesto);
           $('#form-2  #descripcion').val(data.response.companiaDescripcion);
           $('#form-2  #linkedin').val(data.response.companiaLinkedIn);
           $('#form-2  #correo').val(data.response.companiaCorreo);
@@ -395,12 +439,12 @@
 
     function eliminar(id) {
       Swal.fire({
-        title: 'Eliminar Registro',
+        title: '<?= ucfirst(lang('delete')) ?> <?= ucfirst(lang('record')) ?>',
         text: '¿Estas seguro de eliminar el registro?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Si, ¡Eliminalo!',
-        cancelButtonText: 'No, ¡Cancelar!',
+        confirmButtonText: '<?= ucfirst(lang('App.confirm')) ?>!',
+        cancelButtonText: '<?= ucfirst(lang('App.cancel')) ?>!',
         confirmButtonClass: "btn btn-success mt-2",
         cancelButtonClass: "btn btn-danger ml-2 mt-2",
         buttonsStyling: false,
