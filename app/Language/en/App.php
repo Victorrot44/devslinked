@@ -7,7 +7,7 @@
 * Email: victorrot44@gmail.com
 *             victor@scio.group
 * 
-* Location: http://github.com/benedmunds/ion_auth/
+* Location:
 *
 * Created:  05.25.2021
 *

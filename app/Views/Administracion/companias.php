@@ -54,9 +54,9 @@
               <div class="card-box">
                 <form id="form-1" class="form-horizontal" role="form" autocomplete="off">
                   <div class="form-group row">
-                    <label for="compania" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.App.company')) ?>: </label>
+                    <label for="compania" class="col-sm-3 col-form-label"> <?= ucfirst(lang('App.company')) ?>: </label>
                     <div class="col-sm-9">
-                      <input type="text" id="compania" name="compania" class="form-control" placeholder="<?= ucfirst(lang('App.App.company')) ?>">
+                      <input type="text" id="compania" name="compania" class="form-control" placeholder="<?= ucfirst(lang('App.company')) ?>">
                     </div>
                   </div>
                   <div class="form-group row">

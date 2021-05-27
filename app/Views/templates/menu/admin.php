@@ -8,14 +8,14 @@
 							<a href="#"> <i class="fa fa-swatchbook"></i> <?= lang('App.catalogs') ?> <div class="arrow-down"></div>
 							</a>
 							<ul class="submenu">
-								<li> <a href="<?= base_url('admin/programming-languages') ?>"> <?= lang('App.programming_languages') ?>	</a> </li>
-								<li> <a href="<?= base_url('admin/frameworks') ?>"> <?= lang('App.frameworks') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/databases') ?>"> <?= lang('App.databases') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/operating-systems') ?>"> <?= lang('App.operating_systems') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/softwares') ?>"> <?= lang('App.softwares')?> </a> </li>
-								<li> <a href="<?= base_url('admin/methodologies') ?>"> <?= lang('App.methodologies') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/cloud-tools') ?>"> <?= lang('App.cloud').' '.lang('tools') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/lenguages') ?>"> <?= lang('App.languages') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/programming-languages') ?>"> <?= lang('App.programming_languages') ?>	</a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/frameworks') ?>"> <?= lang('App.frameworks') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/databases') ?>"> <?= lang('App.databases') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/operating-systems') ?>"> <?= lang('App.operating_systems') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/softwares') ?>"> <?= lang('App.softwares')?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/methodologies') ?>"> <?= lang('App.methodologies') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/cloud-tools') ?>"> <?= lang('App.cloud').' '.lang('tools') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/lenguages') ?>"> <?= lang('App.languages') ?> </a> </li>
 							</ul>
 						</li>
 						<li class="has-submenu">
