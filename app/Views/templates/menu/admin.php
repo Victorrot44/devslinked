@@ -2,7 +2,7 @@
 					<!-- Navigation Menu-->
 					<ul class="navigation-menu">
 						<li class="has-submenu">
-							<a href="<?= base_url('admin') ?>"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
+							<a href="<?= base_url('admin') ?>"><i class="mdi mdi-view-dashboard"></i><?= lang('App.dashboard') ?></a>
 						</li>
 						<li class="has-submenu">
 							<a href="#"> <i class="fa fa-swatchbook"></i> <?= lang('App.catalogs') ?> <div class="arrow-down"></div>
@@ -12,10 +12,11 @@
 								<li> <a href="<?= base_url('admin/catalogs/frameworks') ?>"> <?= lang('App.frameworks') ?> </a> </li>
 								<li> <a href="<?= base_url('admin/catalogs/databases') ?>"> <?= lang('App.databases') ?> </a> </li>
 								<li> <a href="<?= base_url('admin/catalogs/operating-systems') ?>"> <?= lang('App.operating_systems') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/catalogs/softwares') ?>"> <?= lang('App.softwares')?> </a> </li>
 								<li> <a href="<?= base_url('admin/catalogs/methodologies') ?>"> <?= lang('App.methodologies') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/type-software') ?>"> <?= lang('App.type_software')?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/softwares') ?>"> <?= lang('App.softwares')?> </a> </li>
 								<li> <a href="<?= base_url('admin/catalogs/cloud-tools') ?>"> <?= lang('App.cloud').' '.lang('tools') ?> </a> </li>
-								<li> <a href="<?= base_url('admin/catalogs/lenguages') ?>"> <?= lang('App.languages') ?> </a> </li>
+								<li> <a href="<?= base_url('admin/catalogs/languages') ?>"> <?= lang('App.languages') ?> </a> </li>
 							</ul>
 						</li>
 						<li class="has-submenu">

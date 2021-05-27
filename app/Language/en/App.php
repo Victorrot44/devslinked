@@ -34,6 +34,7 @@ return [
   'methodologies'         => 'Methodologies',
   'cloud'                 => 'Cloud',
   'tools'                 => 'Tools',
+  'tool'                  => 'Tool',
   'languages'             => 'Languages',
   'language'              => 'Language',
   'actions'               => 'Actions',
@@ -42,6 +43,8 @@ return [
   'catalogs'              => 'Catalogs',
   'developer'             => 'Developer',
   'developers'            => 'Developers',
+  'type_software'         => 'Type Software',
+  'cloud_tools'           => 'Cloud Tools',
 
   // Record settings
   'record'  => 'Record',
@@ -64,9 +67,6 @@ return [
 
   // Page Personal
   'personal' => 'Personal',
-  '' => '',
-  '' => '',
-  '' => '',
   '' => '',
   '' => '',
   '' => '',

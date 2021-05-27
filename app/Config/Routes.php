@@ -87,10 +87,50 @@ $routes->group('admin', function($routes){
 			$routes->get('table', 'Catalogos\OperatingSystemController::tabla');
 		});
 
-		$routes->group('softwares', function($routes){});
-		$routes->group('tipos-de-softwares', function($routes){});
-		$routes->group('meto', function($routes){});
-		$routes->group('bases-de-datos', function($routes){});
+		$routes->group('methodologies', function($routes){
+			$routes->get('/', 'Catalogos\MethodologyController::index');
+			$routes->post('/', 'Catalogos\MethodologyController::index');
+			$routes->get('(:num)', 'Catalogos\MethodologyController::registroPorId/$1');
+			$routes->put('(:num)', 'Catalogos\MethodologyController::actualizarRegistro/$1');
+			$routes->delete('(:num)', 'Catalogos\MethodologyController::eliminarRegistro/$1');
+			$routes->get('table', 'Catalogos\MethodologyController::tabla');
+		});
+
+		$routes->group('languages', function($routes){
+			$routes->get('/', 'Catalogos\LanguageController::index');
+			$routes->post('/', 'Catalogos\LanguageController::index');
+			$routes->get('(:num)', 'Catalogos\LanguageController::registroPorId/$1');
+			$routes->put('(:num)', 'Catalogos\LanguageController::actualizarRegistro/$1');
+			$routes->delete('(:num)', 'Catalogos\LanguageController::eliminarRegistro/$1');
+			$routes->get('table', 'Catalogos\LanguageController::tabla');
+		});
+
+		$routes->group('type-software', function($routes){
+			$routes->get('/', 'Catalogos\TypeSoftwareController::index');
+			$routes->post('/', 'Catalogos\TypeSoftwareController::index');
+			$routes->get('(:num)', 'Catalogos\TypeSoftwareController::registroPorId/$1');
+			$routes->put('(:num)', 'Catalogos\TypeSoftwareController::actualizarRegistro/$1');
+			$routes->delete('(:num)', 'Catalogos\TypeSoftwareController::eliminarRegistro/$1');
+			$routes->get('table', 'Catalogos\TypeSoftwareController::tabla');
+			$routes->get('all', 'Catalogos\TypeSoftwareController::getAll');
+		});
+
+		$routes->group('softwares', function($routes){
+			$routes->get('/', 'Catalogos\SoftwareController::index');
+			$routes->post('/', 'Catalogos\SoftwareController::index');
+			$routes->get('(:num)', 'Catalogos\SoftwareController::registroPorId/$1');
+			$routes->put('(:num)', 'Catalogos\SoftwareController::actualizarRegistro/$1');
+			$routes->delete('(:num)', 'Catalogos\SoftwareController::eliminarRegistro/$1');
+			$routes->get('table', 'Catalogos\SoftwareController::tabla');
+		});
+		$routes->group('cloud-tools', function($routes){
+			$routes->get('/', 'Catalogos\CloudToolsController::index');
+			$routes->post('/', 'Catalogos\CloudToolsController::index');
+			$routes->get('(:num)', 'Catalogos\CloudToolsController::registroPorId/$1');
+			$routes->put('(:num)', 'Catalogos\CloudToolsController::actualizarRegistro/$1');
+			$routes->delete('(:num)', 'Catalogos\CloudToolsController::eliminarRegistro/$1');
+			$routes->get('table', 'Catalogos\CloudToolsController::tabla');
+		});
 
 	});
 });
