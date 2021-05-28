@@ -1,0 +1,152 @@
+@font-face {
+  font-family: CenturyGothic;
+  src: url(./../fonts/CenturyGothic.ttf);
+}
+
+a, p, h1, h2, h3, h4, h5, h6, strong, button { font-family: CenturyGothic !important; }
+
+.navbar-cyen .navbar-brand { color: #fff; }
+.navbar-cyen .navbar-brand:hover, .navbar-cyen .navbar-brand:focus { color: #fff; }
+.navbar-cyen .navbar-nav .nav-link { color: #fff; }
+.navbar-cyen .navbar-nav .nav-link:hover, .navbar-cyen .navbar-nav .nav-link:focus { color: #3AA0AB; }
+.navbar-cyen .navbar-nav .nav-link.disabled { color: rgba(255, 255, 255, 0.25); }
+.navbar-cyen .navbar-nav .show > .nav-link,
+.navbar-cyen .navbar-nav .active > .nav-link,
+.navbar-cyen .navbar-nav .nav-link.show,
+.navbar-cyen .navbar-nav .nav-link.active { color: #3AA0AB; }
+.navbar-cyen .navbar-toggler {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.navbar-cyen .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+.navbar-cyen .navbar-text { color: #fff; }
+.navbar-cyen .navbar-text a { color: #fff; }
+.navbar-cyen .navbar-text a:hover, .navbar-cyen .navbar-text a:focus { color: #fff; }
+
+.hero {
+  height:100vh;
+  background-size: cover;
+  background-image: url('./../images/launge_image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-subscriptions {
+  height: 100vh;
+  background-image: url('./../images/form_back.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.hero-shake-hands { 
+  position: relative; 
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./../images/shake-hands.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-shake-hands::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.bg-black { background-color: #000000 !important; }
+.bg-cyen { background-color: #3AA0AB !important; }
+
+.text-morado { color: #20094C !important; }
+.text-cyen { color: #3AA0AB !important; }
+
+.btn-cyen {
+  color: #fff;
+  background-color: #3AA0AB;
+  border-color: #3AA0AB;
+}
+.btn-cyen:hover {
+  color: #fff;
+  background-color: #35b8e0;
+  border-color: #35b8e0;
+}
+.btn-cyen:focus, .btn-cyen.focus {
+  -webkit-box-shadow: 0 0 0 0.15rem rgba(134, 193, 250, 0.5);
+          box-shadow: 0 0 0 0.15rem rgba(134, 193, 250, 0.5);
+}
+.btn-cyen.disabled, .btn-cyen:disabled {
+  color: #fff;
+  background-color: #3AA0AB;
+  border-color: #3AA0AB;
+}
+.btn-cyen:not(:disabled):not(.disabled):active, .btn-cyen:not(:disabled):not(.disabled).active,
+.show > .btn-cyen.dropdown-toggle {
+  color: #fff;
+  background-color: #35b8e0;
+  border-color: #35b8e0;
+}
+.btn-cyen:not(:disabled):not(.disabled):active:focus, .btn-cyen:not(:disabled):not(.disabled).active:focus,
+.show > .btn-cyen.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.15rem rgba(134, 193, 250, 0.5);
+          box-shadow: 0 0 0 0.15rem rgba(134, 193, 250, 0.5);
+}
+
+.btn-outline-cyen {
+  color: #3AA0AB;
+  border-color: #3AA0AB;
+}
+.btn-outline-cyen:hover {
+  color: #fff;
+  background-color: #3AA0AB;
+  border-color: #3AA0AB;
+}
+.btn-outline-cyen:focus, .btn-outline-cyen.focus {
+  -webkit-box-shadow: 0 0 0 0.15rem rgba(113, 182, 249, 0.5);
+          box-shadow: 0 0 0 0.15rem rgba(113, 182, 249, 0.5);
+}
+.btn-outline-cyen.disabled, .btn-outline-cyen:disabled {
+  color: #3AA0AB;
+  background-color: transparent;
+}
+.btn-outline-cyen:not(:disabled):not(.disabled):active, .btn-outline-cyen:not(:disabled):not(.disabled).active,
+.show > .btn-outline-cyen.dropdown-toggle {
+  color: #fff;
+  background-color: #3AA0AB;
+  border-color: #3AA0AB;
+}
+.btn-outline-cyen:not(:disabled):not(.disabled):active:focus, .btn-outline-cyen:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-cyen.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.15rem rgba(113, 182, 249, 0.5);
+          box-shadow: 0 0 0 0.15rem rgba(113, 182, 249, 0.5);
+}
+
+.rounded-1 { border-radius: 1rem !important; }
+
+.circule {
+  margin: 0;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+}
+
+.scroll-top {  
+  z-index: 999;
+  width: 3.5rem;
+  height: 3.5rem;
+  position: fixed;
+  display: none;
+  bottom: 3rem;
+  right: 1.27rem;
+}
